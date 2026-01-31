@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             RemedialUCP2_006Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ContainerApp(
+                    AppBuku(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

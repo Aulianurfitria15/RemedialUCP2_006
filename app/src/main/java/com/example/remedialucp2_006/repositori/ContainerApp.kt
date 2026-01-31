@@ -1,5 +1,6 @@
 package com.example.remedialucp2_006.repositori
 
+import android.app.Application
 import com.example.remedialucp2_006.room.AuditLog
 import com.example.remedialucp2_006.room.AuditLogDao
 import com.example.remedialucp2_006.room.Buku
@@ -47,5 +48,15 @@ class OfflineRepositoriBuku(
 
     override suspend fun softDelete(buku: Buku) {
         bukuDao.softDelete(buku.idBuku)
+    }
+}
+
+class AppBuku : Application() {
+
+    lateinit var container: ContainerApp
+
+    override fun onCreate(){
+        super.onCreate()
+        container = ContainerDataApp(this)
     }
 }
